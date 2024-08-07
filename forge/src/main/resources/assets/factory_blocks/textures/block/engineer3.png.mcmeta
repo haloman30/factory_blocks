@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "TRANSLUCENT",
+    "textures": [
+      "factory_blocks:block/ctm/engineer3"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

@@ -9,16 +9,15 @@ import com.slaincow.factoryblocks.block.fan.MediumFanBlock;
 import com.slaincow.factoryblocks.block.fan.RedstoneFanBlock;
 import com.slaincow.factoryblocks.optional.ChiselSupport;
 import dev.architectury.registry.registries.Registrar;
-import dev.architectury.registry.registries.RegistrarManager;
+import dev.architectury.registry.registries.Registries;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 import java.util.ArrayList;
 
@@ -26,7 +25,7 @@ import static com.slaincow.factoryblocks.FactoryBlocksMod.MODID;
 
 public class RegisterBlocks
 {
-    public static final Supplier<RegistrarManager> MANAGER = Suppliers.memoize(() -> RegistrarManager.get(MODID));
+    public static final Supplier<Registries> MANAGER = Suppliers.memoize(() -> Registries.get(MODID));
 
     enum Type {
         base,
@@ -46,7 +45,7 @@ public class RegisterBlocks
     {
         Identifier blockID = new Identifier(MODID, nameID);
 
-        Registrar<Block> blocks = MANAGER.get().get(Registries.BLOCK);
+        Registrar<Block> blocks = MANAGER.get().get(Registry.BLOCK_KEY);
         RegistrySupplier<Block> blockSupplier;
 
         switch (type) {
@@ -56,8 +55,8 @@ public class RegisterBlocks
             case mediumFan -> blockSupplier = blocks.register(blockID, () -> new MediumFanBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
         }
 
-        Registrar<Item> items = MANAGER.get().get(Registries.ITEM);
-        itemSuppliers.add(items.register(blockID, () -> new TooltipBlockItem(blockSupplier.get(), new Item.Settings().arch$tab(ItemGroups.BUILDING_BLOCKS), nameID + ".tooltip")));
+        Registrar<Item> items = MANAGER.get().get(Registry.ITEM_KEY);
+        itemSuppliers.add(items.register(blockID, () -> new TooltipBlockItem(blockSupplier.get(), new Item.Settings().group(ItemGroup.BUILDING_BLOCKS), nameID + ".tooltip")));
     }
 
     public static void register()

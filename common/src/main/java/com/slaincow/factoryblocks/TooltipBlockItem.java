@@ -5,6 +5,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
@@ -28,10 +29,10 @@ public class TooltipBlockItem extends BlockItem
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext)
     {
-        tooltip.add(Text.translatable("item." + FactoryBlocksMod.MODID + "." + customTooltip).formatted(Formatting.GRAY));
+        tooltip.add(new TranslatableText("item." + FactoryBlocksMod.MODID + "." + customTooltip).formatted(Formatting.GRAY));
         if (debug)
         {
-            tooltip.add(Text.translatable("item." + FactoryBlocksMod.MODID + ".debug").formatted(Formatting.RED));
+            tooltip.add(new TranslatableText("item." + FactoryBlocksMod.MODID + ".debug").formatted(Formatting.RED));
         }
     }
 }

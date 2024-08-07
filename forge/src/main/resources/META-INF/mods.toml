@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[40,)"
 issueTrackerURL = "https://github.com/matthewperiut/factory_blocks/issues"
 license = "MIT"
 
@@ -16,20 +16,20 @@ logoFile = "assets/factory_blocks/icon.png"
 [[dependencies.factory_blocks]]
 modId = "forge"
 mandatory = true
-versionRange = "[47,)"
+versionRange = "[40,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.factory_blocks]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20.1,)"
+versionRange = "[1.18.2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.factory_blocks]]
 modId = "architectury"
 mandatory = true
-versionRange = "[9.1.12,)"
+versionRange = "[4.12.94,)"
 ordering = "AFTER"
 side = "BOTH"

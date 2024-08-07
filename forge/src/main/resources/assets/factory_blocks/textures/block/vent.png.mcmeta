@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "ctm",
+    "layer": "TRANSLUCENT",
+    "textures": [
+      "factory_blocks:block/ctm/vent"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}
