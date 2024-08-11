@@ -148,5 +148,26 @@
   "item.factory_blocks.fan_malfunction_on.tooltip": "Fan (Always On Malfunctioning)",
 
   "block.factory_blocks.medium_fan": "Factory Block",
-  "item.factory_blocks.medium_fan.tooltip": "Medium Fan"
+  "item.factory_blocks.medium_fan.tooltip": "Medium Fan",
+
+  "block.factory_blocks.industrial_relic": "Factory Block",
+  "item.factory_blocks.industrial_relic.tooltip": "An Old Relic from the land of Oneteufyv",
+
+  "block.factory_blocks.metal_column": "Factory Block",
+  "item.factory_blocks.metal_column.tooltip": "Worn Metal Column",
+
+  "block.factory_blocks.scaffold_transparent": "Factory Block",
+  "item.factory_blocks.scaffold_transparent.tooltip": "Scaffold (Transparent)",
+
+  "block.factory_blocks.tape_drive": "Factory Block",
+  "item.factory_blocks.tape_drive.tooltip": "Tape Drive",
+
+  "block.factory_blocks.vertical_vent": "Factory Block",
+  "item.factory_blocks.vertical_vent.tooltip": "Vertical Vent",
+
+  "block.factory_blocks.fan_four_transparent": "Factory Block",
+  "item.factory_blocks.fan_four_transparent.tooltip": "Fan (Transparent, Four Sided)",
+
+  "block.factory_blocks.fan_four_transparent_on": "Factory Block",
+  "item.factory_blocks.fan_four_transparent_on.tooltip": "Fan (Transparent, Redstone Four Sided)"
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "factory_blocks:block/metal_column",
+    "side": "factory_blocks:block/metal_column_side"
+  }
+}

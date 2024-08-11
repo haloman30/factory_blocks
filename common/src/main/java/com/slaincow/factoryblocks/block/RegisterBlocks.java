@@ -2,18 +2,15 @@ package com.slaincow.factoryblocks.block;
 
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
-import com.slaincow.factoryblocks.FactoryBlocksMod;
 import com.slaincow.factoryblocks.TooltipBlockItem;
-import com.slaincow.factoryblocks.block.fan.BaseFanBlock;
-import com.slaincow.factoryblocks.block.fan.MediumFanBlock;
-import com.slaincow.factoryblocks.block.fan.RedstoneFanBlock;
-import com.slaincow.factoryblocks.optional.ChiselSupport;
+import com.slaincow.factoryblocks.block.fan.*;
 import dev.architectury.registry.registries.Registrar;
 import dev.architectury.registry.registries.Registries;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
@@ -25,18 +22,22 @@ import static com.slaincow.factoryblocks.FactoryBlocksMod.MODID;
 
 public class RegisterBlocks
 {
+    public static ArrayList<Identifier> TRANSPARENT_BLOCKS = new ArrayList<Identifier>();
     public static final Supplier<Registries> MANAGER = Suppliers.memoize(() -> Registries.get(MODID));
 
     enum Type {
         base,
         baseFan,
         redFan,
-        mediumFan
+        mediumFan,
+        transparentBase,
+        transparentFan,
+        transparentRedFan
     }
 
     private static void addFactoryBlock(String nameID, Type type)
     {
-        addFactoryBlock(nameID, type,true);
+        addFactoryBlock(nameID, type, true);
     }
 
     public static ArrayList<RegistrySupplier<Item>> itemSuppliers = new ArrayList<>();
@@ -53,10 +54,18 @@ public class RegisterBlocks
             case baseFan -> blockSupplier = blocks.register(blockID, () -> new BaseFanBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
             case redFan -> blockSupplier = blocks.register(blockID, () -> new RedstoneFanBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
             case mediumFan -> blockSupplier = blocks.register(blockID, () -> new MediumFanBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+            case transparentBase -> blockSupplier = blocks.register(blockID, () -> new BaseTransparentFactoryBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+            case transparentFan -> blockSupplier = blocks.register(blockID, () -> new TransparentBaseFanBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+            case transparentRedFan -> blockSupplier = blocks.register(blockID, () -> new TransparentRedstoneFanBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
         }
 
         Registrar<Item> items = MANAGER.get().get(Registry.ITEM_KEY);
         itemSuppliers.add(items.register(blockID, () -> new TooltipBlockItem(blockSupplier.get(), new Item.Settings().group(ItemGroup.BUILDING_BLOCKS), nameID + ".tooltip")));
+
+        if (type == Type.transparentBase || type == Type.transparentFan || type == Type.transparentRedFan)
+        {
+            TRANSPARENT_BLOCKS.add(blockID);
+        }
     }
 
     public static void register()
@@ -113,5 +122,13 @@ public class RegisterBlocks
         addFactoryBlock("fan_malfunction", Type.redFan);
 
         addFactoryBlock("medium_fan", Type.mediumFan, false);
+        addFactoryBlock("vertical_vent", Type.base);
+        addFactoryBlock("tape_drive", Type.base);
+        addFactoryBlock("metal_column", Type.base);
+        addFactoryBlock("industrial_relic", Type.base);
+        addFactoryBlock("scaffold_transparent", Type.transparentBase, true);
+
+        addFactoryBlock("fan_four_transparent", Type.transparentRedFan);
+        addFactoryBlock("fan_four_transparent_on", Type.transparentFan);
     }
 }

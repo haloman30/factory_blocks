@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "pillar",
+    "layer": "TRANSLUCENT",
+    "textures": [
+      "factory_blocks:block/ctm/vertical_vent"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "ctm": {
+    "ctm_version": 1,
+    "type": "pillar",
+    "layer": "TRANSLUCENT",
+    "textures": [
+      "factory_blocks:block/ctm/metal_column"
+    ],
+    "extra": {
+      "light": 0
+    }
+  }
+}

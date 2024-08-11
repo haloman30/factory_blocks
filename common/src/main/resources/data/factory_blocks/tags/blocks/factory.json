@@ -48,6 +48,13 @@
     "factory_blocks:fan_four",
     "factory_blocks:fan_four_on",
     "factory_blocks:fan_malfunction",
-    "factory_blocks:fan_malfunction_on"
+    "factory_blocks:fan_malfunction_on",
+    "factory_blocks:vertical_vent",
+    "factory_blocks:tape_drive",
+    "factory_blocks:metal_column",
+    "factory_blocks:industrial_relic",
+    "factory_blocks:scaffold_transparent",
+    "factory_blocks:fan_four_transparent",
+    "factory_blocks:fan_four_transparent_on"
   ]
 }
