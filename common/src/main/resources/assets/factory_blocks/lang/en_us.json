@@ -171,6 +171,45 @@
   "block.factory_blocks.fan_four_transparent_on": "Factory Block",
   "item.factory_blocks.fan_four_transparent_on.tooltip": "Fan (Transparent, Redstone Four Sided)",
 
+  "block.factory_blocks.insulation_classic": "Factory Block",
+  "item.factory_blocks.insulation_classic.tooltip": "Insulation (Legacy)",
+
+  "block.factory_blocks.wires_classic": "Factory Block",
+  "item.factory_blocks.wires_classic.tooltip": "Wires (Legacy)",
+
+  "block.factory_blocks.exhaust_red": "Factory Block",
+  "item.factory_blocks.exhaust_red.tooltip": "Thermal Exhaust Plating (Red)",
+
+  "block.factory_blocks.exhaust_blue": "Factory Block",
+  "item.factory_blocks.exhaust_blue.tooltip": "Thermal Exhaust Plating (Blue)",
+
+  "block.factory_blocks.exhaust_green": "Factory Block",
+  "item.factory_blocks.exhaust_green.tooltip": "Thermal Exhaust Plating (Green)",
+
+  "block.factory_blocks.exhaust_yellow": "Factory Block",
+  "item.factory_blocks.exhaust_yellow.tooltip": "Thermal Exhaust Plating (Yellow)",
+
+  "block.factory_blocks.engineer1": "Factory Block",
+  "item.factory_blocks.engineer1.tooltip": "Engineer's Pipes (Alternate)",
+
+  "block.factory_blocks.engineer2": "Factory Block",
+  "item.factory_blocks.engineer2.tooltip": "Engineer's Pipes (Alternate 2)",
+
+  "block.factory_blocks.engineer3": "Factory Block",
+  "item.factory_blocks.engineer3.tooltip": "Engineer's Pipes (Alternate 3)",
+
+  "block.factory_blocks.pcb_green": "Factory Block",
+  "item.factory_blocks.pcb_green.tooltip": "Circuit Board (Green)",
+
   "block.factory_blocks.massive_fan": "Factory Block",
-  "item.factory_blocks.massive_fan.tooltip": "I'm a big fan of this massive fan!"
+  "item.factory_blocks.massive_fan.tooltip": "I'm a big fan of this massive fan!",
+
+  "block.factory_blocks.insulation_pink": "Factory Block",
+  "item.factory_blocks.insulation_pink.tooltip": "Insulation (Pink)",
+
+  "block.factory_blocks.wood_bricks": "Factory Block",
+  "item.factory_blocks.wood_bricks.tooltip": "Wooden Brick Floor",
+
+  "block.factory_blocks.wood_bricks_alt": "Factory Block",
+  "item.factory_blocks.wood_bricks_alt.tooltip": "Wooden Brick Floor with Metal Debris"
 }

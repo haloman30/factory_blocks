@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "": { "model": "factory_blocks:block/exhaust_red" }
+  },
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "factory_blocks:block/ctm/exhaust_red/4",
+    "empty": "factory_blocks:block/ctm/exhaust_red/1",
+    "horizontal": "factory_blocks:block/ctm/exhaust_red/3",
+    "particle": "factory_blocks:block/ctm/exhaust_red/0",
+    "vertical": "factory_blocks:block/ctm/exhaust_red/2"
+  }
+}

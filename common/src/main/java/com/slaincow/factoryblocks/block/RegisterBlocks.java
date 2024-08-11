@@ -33,7 +33,8 @@ public class RegisterBlocks
         mediumFan,
         transparentBase,
         transparentFan,
-        transparentRedFan
+        transparentRedFan,
+        baseWood
     }
 
     private static void addFactoryBlock(String nameID, Type type)
@@ -138,5 +139,22 @@ public class RegisterBlocks
         addFactoryBlock("fan_four_transparent", Type.transparentRedFan);
         addFactoryBlock("fan_four_transparent_on", Type.transparentFan);
         addFactoryBlock("massive_fan", Type.base);
+
+        // Legacy/Testing/Misc Blocks
+        addFactoryBlock("insulation_classic", RegisterBlocks.Type.base);
+        addFactoryBlock("wires_classic", RegisterBlocks.Type.base);
+        addFactoryBlock("exhaust_red", RegisterBlocks.Type.base);
+        addFactoryBlock("exhaust_blue", RegisterBlocks.Type.base);
+        addFactoryBlock("exhaust_green", RegisterBlocks.Type.base);
+        addFactoryBlock("exhaust_yellow", RegisterBlocks.Type.base);
+        addFactoryBlock("engineer1", RegisterBlocks.Type.base);
+        addFactoryBlock("engineer2", RegisterBlocks.Type.base);
+        addFactoryBlock("engineer3", RegisterBlocks.Type.base);
+
+        // New Blocks
+        addFactoryBlock("pcb_green", RegisterBlocks.Type.base);
+        addFactoryBlock("insulation_pink", RegisterBlocks.Type.base);
+        addFactoryBlock("wood_bricks", RegisterBlocks.Type.baseWood);
+        addFactoryBlock("wood_bricks_alt", RegisterBlocks.Type.baseWood);
     }
 }

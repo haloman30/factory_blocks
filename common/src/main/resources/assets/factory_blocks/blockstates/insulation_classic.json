@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "": { "model": "factory_blocks:block/insulation_classic" }
+  },
+  "athena:loader": "athena:ctm",
+  "ctm_textures": {
+    "center": "factory_blocks:block/ctm/insulation_classic/4",
+    "empty": "factory_blocks:block/ctm/insulation_classic/1",
+    "horizontal": "factory_blocks:block/ctm/insulation_classic/3",
+    "particle": "factory_blocks:block/ctm/insulation_classic/0",
+    "vertical": "factory_blocks:block/ctm/insulation_classic/2"
+  }
+}
