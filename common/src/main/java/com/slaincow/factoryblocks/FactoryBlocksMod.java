@@ -45,9 +45,14 @@ public class FactoryBlocksMod
 			RenderTypeRegistry.register(RenderLayer.getTranslucent(), block);
 		}
 
-		if (chisel) {
-			for (RegistrySupplier<Item> supplier : RegisterBlocks.itemSuppliers) {
-				ChiselSupport.addFactoryBlockToChisel(supplier.get().arch$registryName());
+		if (chisel)
+		{
+			for (RegistrySupplier<Item> supplier : RegisterBlocks.itemSuppliers)
+			{
+				if (!RegisterBlocks.EXCLUDED_BLOCKS.contains(supplier.getId()))
+				{
+					ChiselSupport.addFactoryBlockToChisel(supplier.get().arch$registryName());
+				}
 			}
 		}
 	}

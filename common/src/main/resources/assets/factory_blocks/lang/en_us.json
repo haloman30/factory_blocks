@@ -169,5 +169,8 @@
   "item.factory_blocks.fan_four_transparent.tooltip": "Fan (Transparent, Four Sided)",
 
   "block.factory_blocks.fan_four_transparent_on": "Factory Block",
-  "item.factory_blocks.fan_four_transparent_on.tooltip": "Fan (Transparent, Redstone Four Sided)"
+  "item.factory_blocks.fan_four_transparent_on.tooltip": "Fan (Transparent, Redstone Four Sided)",
+
+  "block.factory_blocks.massive_fan": "Factory Block",
+  "item.factory_blocks.massive_fan.tooltip": "I'm a big fan of this massive fan!"
 }

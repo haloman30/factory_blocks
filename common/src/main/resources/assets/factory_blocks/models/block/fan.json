@@ -5,6 +5,6 @@
     "south": "#front",
     "front": "factory_blocks:block/fan/still",
     "side": "factory_blocks:block/fan/side",
-    "top": "factory_blocks:block/fan/side"
+    "top": "factory_blocks:block/fan/top_alt"
   }
 }

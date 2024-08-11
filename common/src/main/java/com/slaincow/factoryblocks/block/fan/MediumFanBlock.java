@@ -17,17 +17,47 @@ public class MediumFanBlock extends BaseFanBlock
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext ctx) {
+    public VoxelShape getCameraCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext ctx)
+    {
+        return getScaledShape(state);
+    }
+
+    @Override
+    public VoxelShape getRaycastShape(BlockState state, BlockView world, BlockPos pos)
+    {
+        return getScaledShape(state);
+    }
+
+    @Override
+    public VoxelShape getCullingShape(BlockState state, BlockView world, BlockPos pos)
+    {
+        return getScaledShape(state);
+    }
+
+    @Override
+    public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext ctx)
+    {
+        return getScaledShape(state);
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext ctx)
+    {
+        return getScaledShape(state);
+    }
+
+    private VoxelShape getScaledShape(BlockState state)
+    {
         Direction dir = state.get(Properties.HORIZONTAL_FACING);
         switch(dir) {
             case NORTH:
             case SOUTH:
-                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 2.0f, 2.0f, 1.0f);
+                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 3.0f, 3.0f, 1.0f);
             case EAST:
             case WEST:
-                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 2.0f, 2.0f);
+                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 3.0f, 3.0f);
             default:
-                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 2.0f, 2.0f);
+                return VoxelShapes.cuboid(0.0f, 0.0f, 0.0f, 1.0f, 3.0f, 3.0f);
         }
     }
 }

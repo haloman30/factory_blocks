@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": { "model": "factory_blocks:block/massive_fan" }
+  },
+  "athena:loader": "athena:giant",
+  "ctm_textures": {
+    "1": "factory_blocks:block/ctm/massive_fan/1",
+    "2": "factory_blocks:block/ctm/massive_fan/2",
+    "3": "factory_blocks:block/ctm/massive_fan/3",
+    "4": "factory_blocks:block/ctm/massive_fan/4",
+    "5": "factory_blocks:block/ctm/massive_fan/5",
+    "6": "factory_blocks:block/ctm/massive_fan/6",
+    "7": "factory_blocks:block/ctm/massive_fan/7",
+    "8": "factory_blocks:block/ctm/massive_fan/8",
+    "9": "factory_blocks:block/ctm/massive_fan/9",
+    "particle": "factory_blocks:block/massive_fan"
+  },
+  "height": 3,
+  "width": 3
+}

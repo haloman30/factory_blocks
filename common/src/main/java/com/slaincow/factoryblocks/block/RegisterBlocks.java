@@ -23,6 +23,7 @@ import static com.slaincow.factoryblocks.FactoryBlocksMod.MODID;
 public class RegisterBlocks
 {
     public static ArrayList<Identifier> TRANSPARENT_BLOCKS = new ArrayList<Identifier>();
+    public static ArrayList<Identifier> EXCLUDED_BLOCKS = new ArrayList<Identifier>();
     public static final Supplier<Registries> MANAGER = Suppliers.memoize(() -> Registries.get(MODID));
 
     enum Type {
@@ -57,6 +58,12 @@ public class RegisterBlocks
             case transparentBase -> blockSupplier = blocks.register(blockID, () -> new BaseTransparentFactoryBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
             case transparentFan -> blockSupplier = blocks.register(blockID, () -> new TransparentBaseFanBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
             case transparentRedFan -> blockSupplier = blocks.register(blockID, () -> new TransparentRedstoneFanBlock(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+            case baseWood -> blockSupplier = blocks.register(blockID, () -> new BaseWoodFactoryBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
+        }
+
+        if (!include)
+        {
+            EXCLUDED_BLOCKS.add(blockID);
         }
 
         Registrar<Item> items = MANAGER.get().get(Registry.ITEM_KEY);
@@ -130,5 +137,6 @@ public class RegisterBlocks
 
         addFactoryBlock("fan_four_transparent", Type.transparentRedFan);
         addFactoryBlock("fan_four_transparent_on", Type.transparentFan);
+        addFactoryBlock("massive_fan", Type.base);
     }
 }
