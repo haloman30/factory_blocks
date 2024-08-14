@@ -31,6 +31,20 @@ public class FactoryBlocksMod
 
 	public static void post(boolean chisel)
 	{
+		if (chisel)
+		{
+			for (RegistrySupplier<Item> supplier : RegisterBlocks.itemSuppliers)
+			{
+				if (!RegisterBlocks.EXCLUDED_BLOCKS.contains(supplier.getId()))
+				{
+					ChiselSupport.addFactoryBlockToChisel(supplier.get().arch$registryName());
+				}
+			}
+		}
+	}
+
+	public static void post_client()
+	{
 		Registrar<Block> blocks = Registries.get(MODID).get(Registry.BLOCK_KEY);
 
 		for (Identifier block_id : RegisterBlocks.TRANSPARENT_BLOCKS)
@@ -44,16 +58,6 @@ public class FactoryBlocksMod
 
 			RenderTypeRegistry.register(RenderLayer.getTranslucent(), block);
 		}
-
-		if (chisel)
-		{
-			for (RegistrySupplier<Item> supplier : RegisterBlocks.itemSuppliers)
-			{
-				if (!RegisterBlocks.EXCLUDED_BLOCKS.contains(supplier.getId()))
-				{
-					ChiselSupport.addFactoryBlockToChisel(supplier.get().arch$registryName());
-				}
-			}
-		}
 	}
+
 }

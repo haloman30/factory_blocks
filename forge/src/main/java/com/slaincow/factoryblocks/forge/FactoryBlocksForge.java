@@ -2,10 +2,12 @@ package com.slaincow.factoryblocks.forge;
 
 import com.slaincow.factoryblocks.FactoryBlocksMod;
 import dev.architectury.platform.forge.EventBuses;
+import net.minecraftforge.common.ForgeConfig;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -17,10 +19,16 @@ public class FactoryBlocksForge {
         EventBuses.registerModEventBus(FactoryBlocksMod.MODID, FMLJavaModLoadingContext.get().getModEventBus());
         FactoryBlocksMod.init();
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::clientSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         FactoryBlocksMod.post(ModList.get().isLoaded("chisel"));
+    }
+
+    private void clientSetup(final FMLClientSetupEvent event)
+    {
+        FactoryBlocksMod.post_client();
     }
 }
